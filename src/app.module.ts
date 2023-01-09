@@ -6,6 +6,7 @@ import { UserModule } from './user/user.module';
 import { TodoModule } from './todo/todo.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { ConfigModule } from '@nestjs/config';
+import { CreateUserService } from './user/services/create-user.service';
 
 @Module({
     imports: [
@@ -19,6 +20,6 @@ import { ConfigModule } from '@nestjs/config';
         PrismaModule,
     ],
     controllers: [AppController],
-    providers: [AppService],
+    providers: [AppService, CreateUserService],
 })
 export class AppModule {}
