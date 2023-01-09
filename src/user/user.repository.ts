@@ -14,6 +14,20 @@ export class UserRepository {
         return this._users;
     }
 
+    _findOne(id: string) {
+        const user = this._users.find(
+            (user) => user.email === id,
+        );
+
+        if(user){
+            const response: ResponseDto = {data: user, message: 'User found'}
+            return response;
+        };
+        const response: ResponseDto = {data: null, message: "User not found"}
+        return response;
+        
+    }
+
     findAll() {
         const serializerUsers: SerializedUserDto[] =
             this._users.map((user) => ({
