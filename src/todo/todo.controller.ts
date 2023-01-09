@@ -11,7 +11,7 @@ import { TodoService } from './todo.service';
 import { CreateTodoDto } from './dto/create-todo.dto';
 import { UpdateTodoDto } from './dto/update-todo.dto';
 import { ApiTags } from '@nestjs/swagger';
-@ApiTags('todos')
+@ApiTags('Endpoint for todos crud requets')
 @Controller('todo')
 export class TodoController {
     constructor(
